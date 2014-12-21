@@ -1,0 +1,16 @@
+---
+- hosts: monolith
+  vars_files:
+    - settings.yml
+
+  roles:
+    - ubuntu-server
+    - deployer
+    - nginx
+    - memcached
+    - mysql
+    - openjdk7
+    - php
+    - symfony2
+
+

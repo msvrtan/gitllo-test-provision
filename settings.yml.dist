@@ -1,0 +1,23 @@
+---
+parameters:
+  deployer_username: deployer
+  database_root_password: CHANGEME
+
+  database_users:
+    - username: deployer
+      password: CHANGEME
+
+  databases:
+    - name: example
+    - name: example_test
+
+  memcached:
+    ip: 127.0.0.1
+
+applications:
+  - template: symfony2-application
+    domain:   www.example.com
+    root_path: /var/www/sites/example/
+  - template: redirect
+    domain:   example.com
+    redirect_to: http://www.example.com
