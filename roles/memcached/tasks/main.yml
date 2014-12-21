@@ -1,0 +1,9 @@
+---
+- name: Install Memcached
+  apt: pkg="{{ item }}" state=installed update_cache=true
+  with_items:
+    - memcached
+- lineinfile: "dest=/etc/memcached.conf regexp='^-l' line='-l {{private_ip}}'"
+  notify:
+    - RestartMemcached    
+
