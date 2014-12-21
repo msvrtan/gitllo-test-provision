@@ -6,6 +6,7 @@ parameters:
   database_users:
     - username: deployer
       password: CHANGEME
+      db_name: example
 
   databases:
     - name: example

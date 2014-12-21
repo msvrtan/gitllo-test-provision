@@ -40,6 +40,6 @@
   with_items: parameters.databases
 
 - name: Add MySQL users (allowing to connect from everywhere)
-  mysql_user: name={{ item.username }} host="%" password={{ item.password }} priv=zizoo_production.*:ALL,GRANT
+  mysql_user: name={{ item.username }} host="%" password={{ item.password }} priv={{ item.db_name }}.*:ALL,GRANT
   with_items: parameters.database_users
 
