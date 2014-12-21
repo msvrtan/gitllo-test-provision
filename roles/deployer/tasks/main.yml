@@ -1,0 +1,5 @@
+---
+- name: Create deployer user
+  user: name={{ parameters.deployer_username }} shell=/bin/bash append=yes
+- name: Make sure that the .ssh folder exists
+  action: file path=/home/{{ parameters.deployer_username }}/.ssh state=directory owner={{ parameters.deployer_username }}
